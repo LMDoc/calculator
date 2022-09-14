@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Calculator Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### How to Run
+`npm start` runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
 
-## Available Scripts
+### Assumptions
+Calculator should have following basic functionality
+⦁	Handle standard arithmetic operators
+⦁	Handle decimal points
+⦁	Clear current and clear everything buttons
+⦁	Delete button to correct mistakes
 
-In the project directory, you can run:
+Assumptions regarding functionality
+⦁	Pressing equals should conclude current equation
+⦁	Should not be possible to apply operators in succession (e.g. `2++2`)
+⦁	Large numbers should be formatted for readability
 
-### `npm start`
+### Additional Features
+⦁	International number formatting for completed calculations based on users local settings. (e.g. British format: '1,000,000', German: '1.000.000')
+⦁	List of previous calculations (up to 3)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Limitations
+⦁	Somewhat responsive design, doesn't look good on mobile sizes though. I should have prehaps used CSS Grid or a lightweight CSS framework like Tailwind.
+⦁	Numbers can include multiple decimal points although not in succession (e.g. `2.5.5`). This doesn't cause any fatal issues but the equals button won't output anything. I ran out of time, but i imagine this problem could be over come by splitting the calculation string on the operators and interating over the numbers to see if they contain more than one decimal.
+⦁	One bug is that equations can be started with an operator which I didn't have time to fix. This doesn't cause any issues and simply treats to sum as having a zero. For example, `+3+3` would output `6` as it's treated like `0+3+3`. With more time I could have fixed this with an escape clause on the onClick event.
+⦁	Use of `eval()` function causes an eslint error stating `eval()` can be harmful. This is due to eval possibly allowing cross site scripting attacks if not used correctly. Although due to this app not having any inputs and React naturally sanitising inputs, this shouldn't be an issue.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Future Enhancements
+⦁	Percentage button. Not easily possible in current implimentation due to `eval()` not recogising % as an operator. Would possibly have a function that checks for % and converts it into a mathmathical expression (`100+10%` would become `100*0.10`). This would require some more research and testing though.
+⦁	Make the design more responsive so it works at all screen sizes.
+⦁	Add keybinds so that you can type your equations. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

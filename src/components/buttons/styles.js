@@ -8,5 +8,6 @@ export const styles = {
         justifyContent: 'center',
         alignContent: 'center',
         borderTop: '1px solid lightgray',
+        paddingBottom: '1%'
     }
 }

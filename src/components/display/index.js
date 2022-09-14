@@ -7,7 +7,7 @@ const Display = ({ calculation, result, list }) => (
 			{list.map(i => (
 				<div style={styles.list}>
 					<p>
-						{i.calculation} <br/>
+						{i.calculation} <br />
 						= {i.result}
 					</p>
 				</div>

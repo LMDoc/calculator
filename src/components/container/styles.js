@@ -4,11 +4,11 @@ export const styles = {
 		justifyContent: 'flex-start',
 		alignItems: 'flex-start',
 		flexDirection: 'column',
-		width: '600px',
-		height: '90%',
+		width: '40%',
+		minHeight: '70%',
 		border: '3px solid black',
 		borderRadius: '10px',
 		background: 'white',
-		marginTop: '50px',
+		margin: '2% 2%',
 	}
 }

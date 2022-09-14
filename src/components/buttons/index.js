@@ -1,13 +1,8 @@
 import React from 'react'
 import Button from './button'
-
 import { styles } from './styles'
 
-
-
-
 const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
-
 	const buttonValues = [
 		{
 			display: 'CE',
@@ -17,37 +12,37 @@ const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
 		{
 			display: 'C',
 			value: 'C',
-			cb: functionalEvents 
+			cb: functionalEvents
 		},
 		{
-			display: '  ',
-			value: '',
-			cb: () => {},
+			display: 'DEL',
+			value: 'DEL',
+			cb: functionalEvents,
 		},
 		{
 			display: '/',
 			value: '/',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '1',
 			value: '1',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '2',
 			value: '2',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '3',
 			value: '3',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '+',
 			value: '+',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '4',
@@ -57,22 +52,22 @@ const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
 		{
 			display: '5',
 			value: '5',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '6',
 			value: '6',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '-',
 			value: '-',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '7',
 			value: '7',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '8',
@@ -82,17 +77,17 @@ const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
 		{
 			display: '9',
 			value: '9',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
-			display: 'X',
+			display: 'x',
 			value: '*',
-			cb: updateCalculation 
+			cb: updateCalculation
 		},
 		{
 			display: '.',
 			value: '.',
-			cb: updateCalculation, 
+			cb: updateCalculation,
 		},
 		{
 			display: '0',
@@ -102,24 +97,24 @@ const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
 		{
 			display: '',
 			value: '',
-			cb: () => {} 
+			cb: () => { }
 		},
 		{
 			display: '=',
 			value: '=',
-			cb: functionalEvents, 
+			cb: functionalEvents,
 		}
 	]
 
 	return (
 		<div style={styles.buttons}>
-			{buttonValues.map(({display, value, cb}) => (
+			{buttonValues.map(({ display, value, cb }, i) => (
 				<Button
 					value={value}
 					onClick={cb}
-				>
-					{display}
-				</Button>
+					display={display}
+					key={`${value}${i}`}
+				/>
 			))}
 		</div>
 	)

@@ -1,11 +1,9 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useState } from "react"
 
 export const useCalculator = () => {
 	const [calculation, setCalculation] = useState('')
 	const [result, setResult] = useState('')
 	const [list, setList] = useState([])
-
-	console.log(list, calculation, result)
 
 	const updateList = useCallback((result, calculation) => {
 		const newItem = {
@@ -18,7 +16,7 @@ export const useCalculator = () => {
 
 	const calculate = useCallback(() => {
 		if (!calculation) return
-		const result = eval(calculation).toString()
+		const result = new Intl.NumberFormat().format(eval(calculation)).toString()
 		setResult(result)
 		updateList(result, calculation)
 	}, [calculation, updateList])
@@ -38,11 +36,16 @@ export const useCalculator = () => {
 			clear()
 		}
 
+		if (value === 'DEL') {
+			const newCalculation = calculation.slice(0, -1)
+			setCalculation(newCalculation)
+		}
+
 		if (value === '=') {
 			calculate()
 			clear()
 		}
-	}, [calculate, clear])
+	}, [calculate, clear, calculation])
 
 	const updateCalculation = ({ target: { value } }) => {
 		const operators = ['/', '+', '-', '*', '=']
@@ -57,7 +60,6 @@ export const useCalculator = () => {
 	}
 
 	return {
-		clear,
 		calculation,
 		result,
 		list,
