@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Button from './button'
 import { styles } from './styles'
 
 const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
-	const buttonValues = [
+	const buttonValues = useMemo(() => ([
 		{
 			display: 'CE',
 			value: 'CE',
@@ -104,7 +104,7 @@ const Buttons = ({ clickEvents: { updateCalculation, functionalEvents } }) => {
 			value: '=',
 			cb: functionalEvents,
 		}
-	]
+	]), [functionalEvents, updateCalculation])
 
 	return (
 		<div style={styles.buttons}>
