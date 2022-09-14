@@ -13,9 +13,7 @@ const Display = ({ calculation, result, list }) => (
 				</div>
 			))}
 		</div>
-		<div style={{ ...styles.current, ...styles.input }}>{calculation || 0}</div>
-		<div style={{ ...styles.total, ...styles.input }}>= {result || 0}</div>
-
+		<div style={{ ...styles.current, ...styles.input }}>{calculation ? calculation.length > 35 ? `${calculation.slice(0, 35)}...` : calculation : 0}</div>
 	</div>
 )
 

@@ -23,9 +23,6 @@ export const styles = {
     current: {
         height: '15%'
     },
-    total: {
-        height: '15%'
-    },
     list: {
         display: 'flex',
         fontSize: '18px',
