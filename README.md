@@ -30,6 +30,6 @@ Assumptions regarding functionality
 ⦁	Percentage button. Not easily possible in current implementation due to `eval()` not recognising % as an operator. Would possibly have a function that checks for % and converts it into a mathematical expression (`100+10%` would become `100*0.10`). This would require some more research and testing though.  
 ⦁	Make the design more responsive so it works at all screen sizes.  
 ⦁	Add keybinds so that you can type your equations.   
-⦁   Add unit tests
-⦁	Add more Accessibility (Lighthouse Accessibility score currently 76/100)
-⦁   Design is quite basic, could definitely look cooler
+⦁ Add unit tests  
+⦁	Add more Accessibility (Lighthouse Accessibility score currently 76/100)  
+⦁ Design is quite basic, could definitely look cooler  
