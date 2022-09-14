@@ -1,11 +1,13 @@
 export const styles = {
         minHeight: '19%',
         minWidth: '24%',
+        background: '#F1E9DB',
         fontSize: '25px',
         fontFamily: 'Helvetica',
-        border: 'none',
         borderRadius: '5px',
-        margin: '1px',
-        boxShadow: '1px 1px 1px gray',
+        margin: '2px',
         cursor: 'pointer',
+        color: '#111316',
+        border: '1px solid #F1E9DB'
 }
+

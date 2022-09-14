@@ -3,12 +3,11 @@ export const styles = {
         display: 'flex',
         flexDirection: 'column',
         width: '98%',
-        height: '52%',
+        height: '50%',
         margin: '10px 5px',
     },
     input: {
         border: 'none',
-        background: 'white',
         textAlign: 'right',
         fontSize: '35px',
         margin: '10px',
@@ -30,6 +29,6 @@ export const styles = {
     list: {
         display: 'flex',
         fontSize: '18px',
-        color: 'grey',
+        color: '#D4D1C9',
     }
 }

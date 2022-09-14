@@ -7,7 +7,6 @@ export const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         alignContent: 'center',
-        borderTop: '1px solid lightgray',
-        paddingBottom: '1%'
+        padding: '1% 0'
     }
 }

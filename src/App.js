@@ -9,8 +9,8 @@ const styles = {
   app: {
     display: 'flex',
     justifyContent: 'center',
-    background: 'black',
     height: '100vh',
+    color: '#F1E9DB',
   }
 }
 
